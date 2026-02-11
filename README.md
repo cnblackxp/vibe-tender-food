@@ -2,6 +2,25 @@
 
 A Tinder-like food discovery app with Instagram-style social features. Swipe through food orders, like and comment on your favorites!
 
+## Screenshots
+
+### Main App
+![Swipe Interface](screenshots/swipe-interface.png)
+*Main swipe interface - Tinder-like food discovery with delivery app badges*
+
+![Order Details](screenshots/order-details.png)
+*Order details view with comments and likes*
+
+### Admin CMS
+![Admin Orders](screenshots/admin-orders.png)
+*Admin panel - Orders management view*
+
+![Admin Restaurants](screenshots/admin-restaurants.png)
+*Admin panel - Restaurants management view*
+
+![Admin Edit Form](screenshots/admin-edit-form.png)
+*Admin panel - Edit form with real-time image preview*
+
 ## Features
 
 - ✅ **Swipe Interface**: Vertical scrolling with Tinder-like swipe gestures
