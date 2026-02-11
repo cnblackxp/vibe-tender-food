@@ -1,0 +1,240 @@
+.swipe-feed {
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.swipe-container {
+  width: 100%;
+  height: 80%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.food-card {
+  position: absolute;
+  width: 100%;
+  max-width: 380px;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.food-card:active {
+  cursor: grabbing;
+}
+
+.current-card {
+  z-index: 2;
+}
+
+.next-card {
+  z-index: 1;
+  transform: scale(0.95) translateY(20px);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: #333;
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3), transparent);
+  padding: 30px 20px 20px;
+  color: white;
+}
+
+.card-header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.detail-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s;
+}
+
+.detail-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.detail-btn:active {
+  transform: scale(0.95);
+}
+
+.card-content {
+  margin-top: 20px;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-description {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.card-price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4ade80;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.delivery-apps-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.delivery-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.swipe-hints {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.food-card.dragging .swipe-hints {
+  opacity: 0.7;
+}
+
+.hint-left,
+.hint-right {
+  font-size: 48px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  z-index: 3;
+}
+
+.action-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dislike-btn {
+  background: #fff;
+  color: #ef4444;
+}
+
+.dislike-btn:active {
+  transform: scale(0.9);
+  background: #fee2e2;
+}
+
+.like-btn {
+  background: #fff;
+  color: #22c55e;
+}
+
+.like-btn:active {
+  transform: scale(0.9);
+  background: #dcfce7;
+}
+
+.end-message {
+  text-align: center;
+  padding: 40px;
+}
+
+.end-message h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.end-message p {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .swipe-feed {
+    padding: 10px;
+  }
+
+  .food-card {
+    height: 550px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-price {
+    font-size: 28px;
+  }
+}
